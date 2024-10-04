@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="Style/styles.css" />
+    <title>My Family</title>
+  </head>
+  <body>
+    <!-- LOGO AND BACK BUTTON SECTION -->
+    <div class="logo-back-section">
+      <a href="index.html" class="back-btn"
+        ><i class="fa-solid fa-arrow-left"></i> Back</a
+      >
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="contact-left"
+        >
+          <div class="contact-left-title">
+            <h2>Email ME!</h2>
+            <hr />
+          </div>
+          <input
+            type="hidden"
+            name="access_key"
+            value="e5e27d4d-6b36-4ec4-a219-fa764ef5c428"
+          />
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            class="contact-inputs"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            class="contact-inputs"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            class="contact-inputs"
+            required
+          ></textarea>
+          <button type="submit">
+            Submit <img src="assets/arrow_icon.png" alt="" />
+          </button>
+        </form>
+        <div class="contact-right">
+          <img src="assets/right_img.png" alt="" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

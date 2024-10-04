@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="Style/styles.css" />
+    <title>Favorite Music</title>
+  </head>
+  <body>
+    <!-- LOGO AND BACK BUTTON SECTION -->
+    <div class="logo-back-section">
+      <a href="index.html" class="back-btn"
+        ><i class="fa-solid fa-arrow-left"></i> Back</a
+      >
+    </div>
+
+    <!-- MUSIC SECTION -->
+    <section class="personal-details music-section" id="music-details">
+      <h2 class="heading">My <span>Favorite Songs</span></h2>
+
+      <div class="details-container">
+        <!-- Song 1 -->
+        <div class="details-box">
+          <div class="music-image">
+            <img src="img/music photo/Together.jpg" alt="Song 1 Album Cover" />
+          </div>
+          <h3>Song Title:</h3>
+          <p>Together</p>
+          <h3>Singer:</h3>
+          <p>Ne-Yo</p>
+          <audio
+            id="audio-player-1"
+            src="music/Together - Ne-Yo (Lyrics).mp3"
+          ></audio>
+          <div class="music-controls">
+            <button id="play-btn-1" class="btn">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <button id="pause-btn-1" class="btn" style="display: none">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Song 2 -->
+        <div class="details-box">
+          <div class="music-image">
+            <img src="img/music photo/Mad.jpg" alt="Song 2 Album Cover" />
+          </div>
+          <h3>Song Title:</h3>
+          <p>Mad</p>
+          <h3>Singer:</h3>
+          <p>Ne-Yo</p>
+          <audio
+            id="audio-player-2"
+            src="music/Ne-Yo - Mad (Lyrics).mp3"
+          ></audio>
+          <div class="music-controls">
+            <button id="play-btn-2" class="btn">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <button id="pause-btn-2" class="btn" style="display: none">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Song 3 -->
+        <div class="details-box">
+          <div class="music-image">
+            <img src="img/music photo/So Sick.jpg" alt="Song 3 Album Cover" />
+          </div>
+          <h3>Song Title:</h3>
+          <p>So Sick</p>
+          <h3>Singer:</h3>
+          <p>Ne-Yo</p>
+          <audio id="audio-player-3" src="music/Ne-Yo - So Sick.mp3"></audio>
+          <div class="music-controls">
+            <button id="play-btn-3" class="btn">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <button id="pause-btn-3" class="btn" style="display: none">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER DESIGN -->
+    <footer>
+      <p>Keith Ashley Carlos♡</p>
+    </footer>
+
+    <script>
+      const audioPlayers = [
+        document.getElementById("audio-player-1"),
+        document.getElementById("audio-player-2"),
+        document.getElementById("audio-player-3"),
+      ];
+
+      const playButtons = [
+        document.getElementById("play-btn-1"),
+        document.getElementById("play-btn-2"),
+        document.getElementById("play-btn-3"),
+      ];
+
+      const pauseButtons = [
+        document.getElementById("pause-btn-1"),
+        document.getElementById("pause-btn-2"),
+        document.getElementById("pause-btn-3"),
+      ];
+
+      playButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          audioPlayers[index].play();
+          button.style.display = "none"; // Hide play button
+          pauseButtons[index].style.display = "inline-block"; // Show pause button
+        });
+      });
+
+      pauseButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          audioPlayers[index].pause();
+          button.style.display = "none"; // Hide pause button
+          playButtons[index].style.display = "inline-block"; // Show play button
+        });
+      });
+    </script>
+  </body>
+</html>
